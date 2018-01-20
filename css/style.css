@@ -1,0 +1,38 @@
+
+.container {
+    width:550px;
+    margin: 50px auto;
+}
+
+div {
+    margin-top: 30px;
+}
+
+.desc {
+    width: 100%;
+    font-family: segoe ui;
+    color: #444444;
+    border: 1px solid #e3e3e3;
+    background: #eee;
+    border-top: 0;
+}
+.desc h2 {
+    color: #fff;
+    text-transform: capitalize;
+    padding: 5px 20px;
+    background: #10c289;
+}
+.desc p {
+    font-size: 14px;
+    padding: 5px 20px;
+    line-height: 1.3em;
+    color: #f45b00;
+}
+
+.param h2{
+    text-transform: none !important;
+}
+.param p pre {
+    color:#444444;
+    line-height: 1.3em;
+}

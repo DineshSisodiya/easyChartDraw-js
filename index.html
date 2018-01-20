@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta author="Dinesh Kumar Sisodiya">
+	<meta content="line charts,bar charts,column charts,pie charts,angualr gauge or gauge charts">
+	<meta description ="draw chart using fusion chart lib. with easyChartDraw.js & make it very simple. it requires only 3 parameters">
+	<title>Easy Chart Draw JS Library for Admito</title>
+<!-- css for fusion charts  -->
+	<link rel="stylesheet" type="text/css" href="fusionCharts/mycss/style.css">
+<!-- your css files -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<h1 style="text-align: center;text-align: center;font-family:monospace;margin-top: 43px;font-size: 41px;font-weight: lighter">Admito Charts</h1>
+	<div class="container">
+		<div class="desc">
+			<h2>Line chart</h2>
+			<p>
+				var obj = new Chart( );<br>
+				obj.drawChart( obj.chartType.line, data, options );<br>
+			</p>
+		</div>
+		<div id="line-chart">FusionCharts will render here</div>
+
+		<div class="desc">
+			<h2>bar chart</h2>
+			<p>
+				var obj = new Chart( );<br>
+				obj.drawChart( obj.chartType.bar, data, options );<br><br>
+				* obj.chartType.bar2d is also valid for 2d<br>
+				* obj.chartType.bar3d is also available <br>
+			</p>
+		</div>
+		<div id="bar-chart">FusionCharts will render here</div>
+
+		<div class="desc">
+			<h2>column chart</h2>
+			<p>
+				var obj = new Chart( );<br>
+				obj.drawChart( obj.chartType.column, data, options );<br><br>
+				* obj.chartType.column2d is also valid for 2d<br>
+				* obj.chartType.column3d is also available <br>
+			</p>
+		</div>
+		<div id="column-chart">FusionCharts will render here</div>
+
+		<div class="desc">
+			<h2>pie chart</h2>
+			<p>
+				var obj = new Chart( );<br>
+				obj.drawChart( obj.chartType.pie, data, options );<br><br>
+				* obj.chartType.pie2d is also valid for 2d<br>
+				* obj.chartType.pie3d is also available <br>
+			</p>
+		</div>
+		<div id="pie-chart">FusionCharts will render here</div>
+
+		<div class="desc">
+			<h2>gauge chart</h2>
+			<p>
+				var obj = new Chart( );<br>
+				obj.drawChart( obj.chartType.gauge, data, options );<br>
+			</p>
+		</div>
+		<div id="gauge-chart">FusionCharts will render here</div>
+
+		<div class="desc">
+			<h2>multi series line chart</h2>
+			<p>
+				var obj = new Chart( );<br>
+				obj.drawChart( obj.chartType.msLine, data, options );<br>
+			</p>
+		</div>
+		<div id="msline">FusionCharts will render here</div>
+
+		<div class="desc">
+			<h2>multi series bar chart</h2>
+			<p>
+				var obj = new Chart( );<br>
+				obj.drawChart( obj.chartType.msBar, data, options );<br>
+			</p>
+		</div>
+		<div id="msbar">FusionCharts will render here</div>
+
+		<div class="desc">
+			<h2>multi series column chart</h2>
+			<p>
+				var obj = new Chart( );<br>
+				obj.drawChart( obj.chartType.msColumn, data, options );<br>
+			</p>
+		</div>
+		<div id="mscolumn">FusionCharts will render here</div>
+
+		<div class="desc">
+			<h2>stacked column chart</h2>
+			<p>
+				var obj = new Chart( );<br>
+				obj.drawChart( obj.chartType.stackedColumn, data, options );<br>
+			</p>
+		</div>
+		<div id="stackedcolumn">FusionCharts will render here</div>
+		<br>
+
+		<div class="desc param">
+			<h2>chartType parameter</h2>
+			<p>
+	<pre>
+	var obj = new Chart( );
+        var chartType = obj.chartType.<span style="color: red">Name</span>;
+
+	- 1<sup>st</sup> parameter of drawChart( ) fn.
+
+	- *required parameter
+
+	- type is string
+
+	- supported charts : line, bar (2d & 3d), pie (2d & 3d), 
+	  column (2d & 3d) 
+
+	- supported chart in multi series charts : line, bar, 
+	  column ( all of these will be in 2d )
+	</pre>
+			</p>
+		</div>
+		<div class="desc param">
+			<h2>data parameter</h2>
+			<p>
+	<pre>
+	var data = [ ]; 
+
+	- 2<sup>nd</sup> parameter of drawChart( ) fn.
+
+	- *required parameter 
+
+	- type is Array 
+
+	- accepts obj. consists of lables and values etc.
+	</pre>
+			</p>
+		</div>
+		<div class="desc param">
+			<h2>options parameter</h2>
+			<p>
+	<pre>
+	var options = { }; 
+
+	- 3<sup>rd</sup> parameter of drawChart( ) fn. 
+
+	- *required parameter 
+
+	- type is Object 
+
+	- consists of many keys for customizing chart.
+
+	- renderAt key decides on which html elemnt 
+	  chart is to be drawn & this key is required
+
+	-> for detailed description of all parameters 
+	   please refer to <span style="color: red;">fusionCharts/myjs/main.js</span> location
+	</pre>
+			</p>
+		</div>
+	</div>
+
+	
+<!-- fusion charts lib. -->
+	<script src="fusionCharts/js/fusioncharts.js"></script>
+	<script src="fusionCharts/js/fusioncharts.charts.js"></script>
+	<script src="fusionCharts/js/themes/fusioncharts.theme.fint.js"></script>
+	<script src="fusionCharts/js/themes/fusioncharts.theme.carbon.js"></script>
+	<script src="fusionCharts/js/themes/fusioncharts.theme.zune.js"></script>
+	<script src="fusionCharts/js/themes/fusioncharts.theme.ocean.js"></script>
+<!-- easyChartDraw lib. -->
+	<script src="fusionCharts/myjs/easyChartDraw.js"></script>
+	<script src="fusionCharts/myjs/main.js"></script>
+</body>
+</html>
