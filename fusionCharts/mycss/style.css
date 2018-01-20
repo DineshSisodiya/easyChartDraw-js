@@ -14,13 +14,4 @@
     font-family: segoe ui;
  
 }
-/* 
- -- uncomment to remove watermark --
 
-text tspan[dy="-3"] {
-    display: none !important;
-    visibility: hidden !important;
-    font-size: 40px;
-}
-
-*/
