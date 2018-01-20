@@ -1,4 +1,10 @@
 
+/*
+    - Define the data array , using this chart will be drawn
+    - Data is required
+    - For customize specific anchor properties describe in the data array related to that point
+    - To draw vertical line on any value add required key-values in data array.
+*/
 var data  = [
                 {
                    /* 
