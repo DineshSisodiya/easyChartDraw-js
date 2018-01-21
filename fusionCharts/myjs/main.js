@@ -453,3 +453,45 @@ var options = {
 }
 
 admitoChart.drawChart(admitoChart.chartType.stackedColumn2d,data,options);
+
+
+
+// function drawCChart(type,data,options) {
+//    if(document.getElementById(options.renderAt)){
+//      var animOn=(options.animate==null?1:options.animate==0?0:1);
+//      var renderOnElem = document.getElementById(options.renderAt); 
+//      renderOnElem.setAttribute("style","display: flex;flex-flow: row nowrap;width:150px;height:150px");
+//      var svgCircle = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"' + 
+//                      'id="'+options.renderAt+'"><path class="stroke-out" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"' +
+//                      'fill="'+(options.bgColor==null?"#ccc":options.bgColor)+'" stroke="'+(options.strokeOutColor==null?"#eee":options.strokeOutColor)+'" stroke-width="'+(options.strokeOutWidth==null?"2.5":options.strokeOutWidth)+'"></path>'+
+//                      '<path class="stroke-in" stroke-dasharray="'+(data==null?"0":data)+', 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"' +
+//                      'fill="none" stroke="'+(options.strokeInColor==null?"#ff9f00":options.strokeInColor)+'" stroke-width="'+(options.strokeInWidth==null?"2.5":options.strokeInWidth)+'" stroke-linecap="'+(options.strokeType==null?"butt":options.strokeType)+'"' +
+//                      'style="'+(animOn==1?"animation: fillProgress 1s ease-out forwards;":"animation:none")+'"></path>' +
+//                      '<text x="18" y="20.35" class="data-value" fill="'+(options.textColor==null?"#444":options.textColor)+'" style="font-family:'+ (options.textFontName==null?"segoe ui":options.textFontName) +';'+ (animOn==1?"animation: loadText 1s ease-in forwards;":"opacity:1;animation:none")+'">'+data+'%</text></svg>';
+
+//      renderOnElem.innerHTML=svgCircle;
+//    }
+//     else {
+//      console.error('Please specify renderAt key correctly');
+//    }
+// }
+var data=80;
+var options = {
+    "renderAt":"circular-chart", //elem. ID *Required
+    "height":"200", //number
+    "width":"200", //number
+    "caption":'possibility to win',
+    "subCaption":'india',
+    "captionColor":"#292929;",
+    "subCaptionColor":"#292929",
+    "bgColor":"#ccc",
+    "strokeInColor":"#ff9f00",
+    "strokeOutWidth":"2.8", //number
+    "strokeOutColor":"#eee", 
+    "strokeInWidth":"2.8", //number
+    "strokeType":"butt", // square, round
+    "animate":"1", // animation on or off
+    "textColor":"#444",
+    "textFontName":"segoe ui", //font name like you do in css 
+}
+admitoChart.drawChart(admitoChart.chartType.circular,data,options);

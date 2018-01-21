@@ -35,12 +35,38 @@ function Chart() {
                 "stackedColumn2d":"stackedColumn2d",
                 "ms2yAxis":"mscombidy2d",
                 "msCombiDY":"mscombidy2d",
+                "circular":"circular",
     },
 
     this.drawChart = function(chType,data,options) {
-        var chType = chType.toLowerCase(); //if string is passed ignoring case senstivityy 
-        var multiSeries=false;
+        var chType = chType.toLowerCase(); //if string is passed ignoring case senstivity
 
+    if(chType=='circular') {
+
+        if(document.getElementById(options.renderAt)){
+             var animOn=(options.animate==null?1:options.animate==0?0:1);
+             var renderOnElem = document.getElementById(options.renderAt); 
+             renderOnElem.setAttribute("style",'margin:5px auto;font-family: segoe ui;color: #292929;font-weight: 700;text-transform: capitalize;width:'+(options.width==null?150:options.width)+'px;');
+             
+             var caption=(options.caption==null?"":'<div class="captionText" style="text-align:center;margin:1px auto;color:'+(options.captionColor==null?"#292929;":options.captionColor+';')+'">'+options.caption+'</div>');
+             var subCaption=(options.subCaption==null?"":'<div class="captionText" style="font-weight:lighter;text-align:center;margin-top:1px;margin-bottom:6px;color:'+(options.subCaptionColor==null?"#292929;":options.subCaptionColor+';')+'">'+options.subCaption+'</div>');
+             var svgCircle = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"' + 
+                             'id="'+options.renderAt+'"><path class="stroke-out" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"' +
+                             'fill="'+(options.bgColor==null?"#ccc":options.bgColor)+'" stroke="'+(options.strokeOutColor==null?"#eee":options.strokeOutColor)+'" stroke-width="'+(options.strokeOutWidth==null?"2.5":options.strokeOutWidth)+'"></path>'+
+                             '<path class="stroke-in" stroke-dasharray="'+(data==null?"0":data)+', 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"' +
+                             'fill="none" stroke="'+(options.strokeInColor==null?"#ff9f00":options.strokeInColor)+'" stroke-width="'+(options.strokeInWidth==null?"2.5":options.strokeInWidth)+'" stroke-linecap="'+(options.strokeType==null?"butt":options.strokeType)+'"' +
+                             'style="'+(animOn==1?"animation: fillProgress 1s ease-out forwards;":"animation:none")+'"></path>' +
+                             '<text x="18" y="20.35" class="data-value" fill="'+(options.textColor==null?"#444":options.textColor)+'" style="font-weight: lighter;font-family:'+ (options.textFontName==null?"segoe ui":options.textFontName) +';'+ (animOn==1?"animation: loadText 1s ease-in forwards;":"opacity:1;animation:none")+'">'+data+'%</text></svg>';
+
+             renderOnElem.innerHTML=svgCircle + caption + subCaption;
+        }
+        else {
+            console.error('Please specify renderAt key correctly');
+        }
+
+    } else {
+
+        var multiSeries=false;
         FusionCharts.ready(function () {
              function divLineCosmetic() {
                      return '"divlineAlpha" : "'+(options.divlineAlpha==null?"100":options.divlineAlpha)+'",' +
@@ -268,10 +294,6 @@ function Chart() {
                                 + divLineCosmetic();
                     multiSeries=true;
                     break;
-                // case "mscombidy2d":
-                //     //tempDSChart+=
-                //     multiSeries=true;
-                //     break;
 
             }
 
@@ -350,6 +372,8 @@ function Chart() {
                     // rendering the chart
                     fsnChart.render();    
         });
+    } //else ended
+
     }        
 }
 

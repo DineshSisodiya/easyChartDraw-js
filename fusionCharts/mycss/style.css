@@ -24,3 +24,45 @@ text tspan[dy="-3"] {
 }
 
 */
+
+
+/* circular chart css */
+
+/*#CirCharts {
+  display: block;
+  margin: 10px auto;
+  max-width: 95%;
+  max-height: 150px;
+}*/
+
+.stroke-out {
+  transform-origin:center;
+}
+
+.stroke-in {
+  fill: none;
+  transform-origin:center;
+}
+
+@keyframes fillProgress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+ 
+.data-value {
+  font-family: segoe ui;
+  font-size: 8px;
+  text-anchor: middle;
+  transform-origin:center;
+}
+
+@keyframes loadText {
+  0% {
+    transform: scale(0);
+    -webkit-transform:scale(0);
+    -moz-transform:scale(0);
+  }
+}
+
+/* circular chart css */
